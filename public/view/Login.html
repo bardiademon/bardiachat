@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bardiademon Chat</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="Style/Login.css"/>
+
+</head>
+<body onload="onLoad()">
+<header class="container">
+    <div class="div-h2">
+        <h2>Login form</h2>
+    </div>
+</header>
+
+<div class="div-login align-content-center">
+    <div class="jumbotron container div-form">
+        <div id="alert" class="" role="alert"></div>
+        <div class="form-group">
+            <label for="txt-username">Your username</label>
+            <input type="text" class="form-control" id="txt-username"
+                   aria-describedby="nameHelp"
+                   placeholder="Enter username">
+        </div>
+        <div class="form-group">
+            <label for="txt-password">Password</label>
+            <input type="password" class="form-control" id="txt-password" placeholder="Password">
+        </div>
+        <button type="submit" id="btn-login" class="btn btn-outline-primary">Login</button>
+        <button type="submit" id="btn-register" class="btn btn-success">Register</button>
+        <br/>
+        <div class="text-center row" id="show-message">
+            <div id="show-message-progress"></div>
+            <div class="align-bottom" id="show-message-text"></div>
+        </div>
+    </div>
+</div>
+<script src="Controller/Login/onLoad.js"></script>
+<script src="Controller/ShowAlert.js"></script>
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<script src="Controller/ShowMessage.js"></script>
+<script src="Controller/Login/FormListener.js"></script>
+</body>
+</html>

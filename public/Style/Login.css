@@ -1,0 +1,41 @@
+html, body
+{
+    margin: 0;
+    padding: 0;
+}
+
+header
+{
+    margin: 10px;
+}
+
+.div-h2
+{
+    background: url("../image/ic_user.png") no-repeat;
+    background-size: 3.5%;
+}
+
+.div-h2 h2
+{
+    margin-left: 50px;
+}
+
+.div-login
+{
+    margin: 20px;
+}
+
+#show-message
+{
+    margin: 21px -2px -45px;
+}
+
+#show-message-text
+{
+    padding-top: 5px;
+}
+
+.div-form
+{
+    padding-top: 39px;
+}
