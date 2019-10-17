@@ -1,8 +1,8 @@
 $ ("#btn-login").click (() =>
 {
-    const txtUsername = $ ('#txt-username').val ();
+    const txtPhone = $ ('#txt-phone').val ();
     const txtPassword = $ ('#txt-password').val ();
-    if (txtUsername === "" || txtPassword === "")
+    if (txtPhone === "" || txtPassword === "")
         showAlert ("Please enter info" , Danger);
     else
     {
@@ -11,7 +11,7 @@ $ ("#btn-login").click (() =>
         $.ajax ({
             type: "POST" ,
             url: 'http://localhost/api' ,
-            data: {'name_api': "Login" , 'request': {"username": txtUsername , "password": txtPassword}} ,
+            data: {'name_api': "Login" , 'request': {"phone": "+98" + txtPhone , "password": txtPassword}} ,
             success: (res) =>
             {
                 showMessage (null , false);
@@ -26,7 +26,8 @@ $ ("#btn-login").click (() =>
             } ,
             error: () =>
             {
-                showAlert ("Internal Server Error" , Dark);
+                showMessage (null , false);
+                showAlert ("Internal Server Error" , Danger);
             } ,
             header: "Access-Control-Allow-Origin"
         })

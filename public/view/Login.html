@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Bardiademon Chat</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="Style/bootstrap.main.css" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="Style/Login.css"/>
+    <link rel="stylesheet" href="Style/Login.css" type="text/css"/>
 
 </head>
 <body onload="onLoad()">
@@ -20,10 +19,10 @@
     <div class="jumbotron container div-form">
         <div id="alert" class="" role="alert"></div>
         <div class="form-group">
-            <label for="txt-username">Your username</label>
-            <input type="text" class="form-control" id="txt-username"
+            <label for="txt-phone">Your Phone</label>
+            <input type="text" class="form-control" id="txt-phone"
                    aria-describedby="nameHelp"
-                   placeholder="Enter username">
+                   placeholder="Enter Phone">
         </div>
         <div class="form-group">
             <label for="txt-password">Password</label>
@@ -38,11 +37,12 @@
         </div>
     </div>
 </div>
-<script src="Controller/Login/onLoad.js"></script>
-<script src="Controller/ShowAlert.js"></script>
-<script src="https://code.jquery.com/jquery-latest.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-<script src="Controller/ShowMessage.js"></script>
-<script src="Controller/Login/FormListener.js"></script>
+<script src="Controller/Login/onLoad.js" type="text/javascript" rel="script"></script>
+<script src="Controller/ShowAlert.js" type="text/javascript" rel="script"></script>
+<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript" rel="script"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js" type="text/javascript"
+        rel="script"></script>
+<script src="Controller/ShowMessage.js" type="text/javascript" rel="script"></script>
+<script src="Controller/Login/FormListener.js" type="text/javascript" rel="script"></script>
 </body>
 </html>

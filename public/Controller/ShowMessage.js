@@ -1,3 +1,5 @@
+let hideProgress;
+
 /**
  * @bardiademon
  * @param message
@@ -7,14 +9,16 @@ const showMessage = (message , progress) =>
 {
     if (message === null)
     {
-        $ ("#show-message-text").html ("");
-        $ ("#show-message-progress").html ("");
+        hideProgress = true;
+        $ ("#show-message-text").html (null);
+        $ ("#show-message-progress").html ("").hide ();
     }
     else
     {
+        hideProgress = false;
         if (progress) getHtmlLoading ((htmlLoading) =>
         {
-            $ ("#show-message-progress").html (htmlLoading);
+            if (hideProgress === false) $ ("#show-message-progress").html (htmlLoading).show ();
         });
         $ ("#show-message-text").html (message);
     }
@@ -38,4 +42,4 @@ const getHtmlLoading = (callback) =>
             callback (null);
         }
     });
-}
+};

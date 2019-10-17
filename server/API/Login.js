@@ -1,26 +1,22 @@
 const {login} = require ("../Model/Login");
 const {isLoginId} = require ("../Model/IsLogin");
 const {logout} = require ("../Model/Logout");
+const phone = require ('phone');
 
-const KR_USERNAME = "username";
+const KR_PHONE = "phone";
 const KR_PASSWORD = "password";
 
 /**
  * @var string
  */
-let username , password;
+let valPhone , password;
 
 /**
  * @bardiademon
  * @param request
  * @returns {boolean}
  */
-const checkRequest = (request) =>
-{
-    // let parse = JSON.parse (request);
-    return (((username = request[KR_USERNAME]) !== undefined) && ((password = request[KR_PASSWORD]) !== undefined));
-};
-
+const checkRequest = (request) => (((valPhone = request[KR_PHONE]) !== undefined) && ((password = request[KR_PASSWORD]) !== undefined));
 
 let response;
 
@@ -36,26 +32,42 @@ const api = (req , res , request , result) =>
     response = res;
     if (checkRequest (request))
     {
-        const {checkInfoLogin} = require ("../Model/CheckInfoLogin");
-        checkInfoLogin (username , password , (found , id , username) =>
+        try
         {
-            if (found)
+            console.log (valPhone);
+            const checkPhone = phone (valPhone);
+            console.log (checkPhone.toString ());
+            if (checkPhone[1] === "IRN")
             {
-                isLoginId (id , (isLogin , idLogin) =>
+                valPhone = checkPhone[0];
+                const {checkInfoLogin} = require ("../Model/CheckInfoLogin");
+                checkInfoLogin (valPhone , password , (found , id) =>
                 {
-                    if (isLogin)
+                    if (found)
                     {
-                        logout (idLogin , (logout) =>
+                        isLoginId (id , (isLogin , idLogin) =>
                         {
-                            if (logout) setLogin (id , username , result);
-                            else result (false , 500 , {"login": false});
+                            if (isLogin)
+                            {
+                                logout (idLogin , (logout) =>
+                                {
+                                    if (logout) setLogin (id , valPhone , result);
+                                    else result (false , 500 , {"login": false});
+                                });
+                            }
+                            else setLogin (id , valPhone , result);
                         });
                     }
-                    else setLogin (id , username , result);
+                    else result (false , 200 , "The information is incorrect");
                 });
             }
-            else result (false , 200 , "اطلاعات وارد شده نادرست است");
-        });
+            else result (false , 200 , "The information is incorrect");
+
+        }
+        catch (e)
+        {
+            result (false , 200 , "The information is incorrect");
+        }
     }
     else result (false , 400 , "Bad Request");
 };
@@ -63,12 +75,12 @@ const api = (req , res , request , result) =>
 /**
  * @bardiademon
  * @param id
- * @param username
+ * @param valPhone
  * @param result
  */
-const setLogin = (id , username , result) =>
+const setLogin = (id , valPhone , result) =>
 {
-    login (id , username , (ok , code) =>
+    login (id , valPhone , (ok , code) =>
     {
         if (ok)
         {

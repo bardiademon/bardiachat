@@ -29,6 +29,6 @@ const api = (req , res , request , result) =>
 
 /**
  * @bardiademon
- * @type {{api: api}}
+ * @type {{isLogin: api, api: api}}
  */
-module.exports = {api};
+module.exports = {api , isLogin: api};

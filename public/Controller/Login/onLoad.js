@@ -3,7 +3,7 @@
  */
 const onLoad = () =>
 {
-    disabledBtn (true);
+    disabledBtn (null , null , true);
     showMessage ("A few moments" , true);
     isLogin ((login) =>
     {

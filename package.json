@@ -23,6 +23,7 @@
     "auto-bind": "latest",
     "cookie-parser": "latest",
     "express": "^4.17.1",
+    "google-libphonenumber": "latest",
     "jquery": "^3.4.1",
     "js-sha256": "latest",
     "moment": "^2.24.0",
@@ -30,10 +31,13 @@
     "mysql2": "latest",
     "node": "^12.11.0",
     "node-import": "^0.9.2",
+    "phone": "^2.3.22",
     "replace-string": "latest",
     "set-cookie-parser": "^2.4.0",
     "split-string": "^6.1.0",
-    "typescript": "^3.6.3"
+    "typescript": "^3.6.3",
+    "phone": "latest",
+    "email-validator": "latest"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.2",

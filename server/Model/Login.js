@@ -5,12 +5,12 @@ const {time , timePlusYear} = require ("../Classes/Time");
 /**
  * @bardiademon
  * @param id
- * @param username
+ * @param phone
  * @param afterLogin
  */
-const login = (id , username , afterLogin) =>
+const login = (id , phone , afterLogin) =>
 {
-    let code = shaToTime (shaToSha (id.toString () , username.toString ()));
+    let code = shaToTime (shaToSha (id.toString () , phone.toString ()));
 
     let linkConnect = connect ();
     if (linkConnect !== false) setLogin (id , code , linkConnect , (ok) =>

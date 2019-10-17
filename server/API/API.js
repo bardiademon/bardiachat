@@ -19,7 +19,7 @@ const api = (req , res) =>
         });
     }
     else res.end ();
-}
+};
 
 /**
  * @bardiademon
