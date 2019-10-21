@@ -1,0 +1,95 @@
+html, body
+{
+    overflow-x: hidden;
+    height: 100%;
+}
+
+header
+{
+    margin-top: 15px;
+    bottom: 0;
+    margin-bottom: 0;
+}
+
+/*.card-header*/
+/*{*/
+/*    background-color: #e91e63;*/
+/*    color: #FFF;*/
+/*}*/
+
+#content
+{
+    margin-top: -7px;
+}
+
+#dropdownMenuButton
+{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+#div-header-img-profile img
+{
+    width: 200px;
+    height: 200px;
+}
+
+#div-name-phone
+{
+    margin: 10px;
+}
+
+.jumbotron
+{
+    padding: 10px;
+    height: 600px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.img-profile
+{
+    width: 50px;
+    height: 50px;
+}
+
+.has-search .form-control
+{
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback
+{
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 34px;
+    height: 34px;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+.list-chat-item *
+{
+    cursor: pointer;
+}
+
+#status
+{
+    margin-left: 65px;
+}
+
+#div-dropdown
+{
+    overflow-y: scroll;
+    height: 300px;
+}
+
+#dialog-warning-title, #dialog-warning-body
+{
+    text-shadow: 1px 1px #F44336;
+}

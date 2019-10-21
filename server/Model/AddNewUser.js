@@ -54,4 +54,8 @@ const makeQuery = (setEmail) =>
     return query;
 };
 
+/**
+ * @bardiademon
+ * @type {{addNew: addNew}}
+ */
 module.exports = {addNew};

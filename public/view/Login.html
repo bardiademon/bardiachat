@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Bardiademon Chat</title>
-    <link rel="stylesheet" href="Style/bootstrap.main.css" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="Style/Login.css" type="text/css"/>
+    <link type="text/css" rel="stylesheet" href="Style/Bootstrap/bootstrap.min.4.3.1.css"/>
+    <link type="text/css" rel="stylesheet" href="Style/Login.css" type="text/css"/>
 
 </head>
 <body onload="onLoad()">
@@ -14,7 +13,6 @@
         <h2>Login form</h2>
     </div>
 </header>
-
 <div class="div-login align-content-center">
     <div class="jumbotron container div-form">
         <div id="alert" class="" role="alert"></div>
@@ -39,9 +37,9 @@
 </div>
 <script src="Controller/Login/onLoad.js" type="text/javascript" rel="script"></script>
 <script src="Controller/ShowAlert.js" type="text/javascript" rel="script"></script>
-<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript" rel="script"></script>
-<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js" type="text/javascript"
-        rel="script"></script>
+
+<script type="text/javascript" rel="script" src="Controller/JQuery/jquery.min.3.4.1.js"></script>
+
 <script src="Controller/ShowMessage.js" type="text/javascript" rel="script"></script>
 <script src="Controller/Login/FormListener.js" type="text/javascript" rel="script"></script>
 </body>

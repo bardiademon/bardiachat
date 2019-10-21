@@ -1,3 +1,5 @@
+const {existsSync} = require ('fs');
+
 /**
  * @bardiademon
  * @param req
@@ -8,7 +10,9 @@ const api = (req , res) =>
     if (req.method === "POST")
     {
         let nameApi = req.body.name_api;
-        const {api} = require ("./" + nameApi + ".js");
+        const nameFile = "./" + nameApi + ".js";
+
+        const {api} = require (nameFile);
         api (req , res , req.body.request , (ok , scode , result) =>
         {
             res.contentType ("text/json");

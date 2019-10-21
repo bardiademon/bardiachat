@@ -9,5 +9,10 @@
     <orderEntry type="library" name="jquery-latest" level="application" />
     <orderEntry type="library" name="jquery-1.11.1" level="application" />
     <orderEntry type="library" name="js.cookie" level="application" />
+    <orderEntry type="library" name="jquery-3.2.1.slim" level="application" />
+    <orderEntry type="library" name="popper" level="application" />
+    <orderEntry type="library" name="timer.jquery" level="application" />
+    <orderEntry type="library" name="jquery-3.4.1" level="application" />
+    <orderEntry type="library" name="jquery.cookie" level="application" />
   </component>
 </module>

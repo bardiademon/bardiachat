@@ -30,6 +30,7 @@ let response;
 const api = (req , res , request , result) =>
 {
     response = res;
+    console.log (checkRequest (request));
     if (checkRequest (request))
     {
         try
