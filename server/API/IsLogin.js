@@ -1,5 +1,7 @@
 const {isLoginCode} = require ("../Model/IsLogin");
 
+let idUser;
+
 /**
  * @bardiademon
  * @param req
@@ -14,8 +16,9 @@ const api = (req , res , request , result) =>
         let code = req.cookies.code;
         if (code !== undefined)
         {
-            isLoginCode (code , (isLogin) =>
+            isLoginCode (code , (isLogin , id) =>
             {
+                idUser = id;
                 result (true , 200 , {"is_login": isLogin});
             });
         }
@@ -27,8 +30,10 @@ const api = (req , res , request , result) =>
     }
 };
 
+const getIdUser = () => idUser;
+
 /**
  * @bardiademon
- * @type {{isLogin: api, api: api}}
+ * @type {{isLogin: api, getIdUser: (function(): *), api: api}}
  */
-module.exports = {api , isLogin: api};
+module.exports = {api , isLogin: api, getIdUser};

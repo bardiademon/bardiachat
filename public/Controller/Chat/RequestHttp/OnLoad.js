@@ -8,7 +8,11 @@ const onLoad = () =>
     {
         if (wasGet)
         {
+            $ ('.name-user').text (answer.name);
+            $ ('#phone-user').text (answer.phone);
+            if (answer.img !== null) $ ('#img-user').attr ("src" , answer.img);
 
+            connectGeneral ();
         }
         else
         {
@@ -46,7 +50,7 @@ const getInfoUser = (afterGet) =>
         data: {name_api: "InfoUser"} ,
         success: (answer) =>
         {
-            afterGet (true , answer);
+            afterGet ((answer.ok && answer.scode === 200) , answer.result);
         } ,
         error: (request , status , error) =>
         {

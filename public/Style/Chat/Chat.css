@@ -91,5 +91,5 @@ header
 
 #dialog-warning-title, #dialog-warning-body
 {
-    text-shadow: 1px 1px #F44336;
+    color: #E91E63;
 }

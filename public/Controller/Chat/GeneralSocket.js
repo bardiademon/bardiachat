@@ -7,15 +7,9 @@ let listChat;
  */
 const connectGeneral = () =>
 {
-    checkIsLogin ((login) =>
+    Connect (() =>
     {
-        if (login)
-        {
-            Connect (() =>
-            {
-                getListChat (LIST_CHAT_GENERAL)
-            });
-        }
+        getListChat (LIST_CHAT_GENERAL)
     });
 
 };

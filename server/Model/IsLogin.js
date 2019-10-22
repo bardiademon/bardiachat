@@ -13,7 +13,7 @@ const isLoginCode = (code , afterCheck) =>
     {
         linkConnection.query (makeQuery ("code") , [code , true , time ()] , (error , results) =>
         {
-            afterCheck ((!error && results.length > 0) , ((results.length > 0) ? (results[0]).id : 0));
+            afterCheck ((!error && results.length > 0) , ((results.length > 0) ? (results[0]).id_acc : 0));
         });
     }
     else afterCheck (false , 0);
@@ -30,7 +30,7 @@ const isLoginId = (id , afterCheck) =>
     {
         linkConnection.query (makeQuery ("id_acc") , [id , true , time ()] , (error , results) =>
         {
-            afterCheck ((!error && results.length > 0) , ((results.length > 0) ? (results[0]).id : 0));
+            afterCheck ((!error && results.length > 0) , ((results.length > 0) ? (results[0]).id_acc : 0));
         });
     }
     else afterCheck (false , 0);
@@ -41,7 +41,7 @@ const isLoginId = (id , afterCheck) =>
  * @param rowName
  * @returns {string}
  */
-const makeQuery = (rowName) => ("SELECT `id` FROM `login` WHERE `" + rowName + "`=? && `credibility`=? && `time_logout`>?");
+const makeQuery = (rowName) => ("SELECT `id_acc` FROM `login` WHERE `" + rowName + "`=? && `credibility`=? && `time_logout`>?");
 
 /**
  * @bardiademon

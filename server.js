@@ -5,6 +5,8 @@ const {viewHtml} = require ("./server/View");
 const {api} = require ("./server/API/API");
 const cookieParser = require ('cookie-parser');
 
+const {getInfo} = require ('./server/API/InfoUser');
+
 app.set ('view engine' , 'ejs');
 app.set ('views' , path.join (__dirname , 'Views'));
 
@@ -18,6 +20,16 @@ app.route ("/Login").get ((req , res) => viewHtml (res , "Login"));
 app.route ("/Register").get ((req , res) => viewHtml (res , "Register"));
 
 app.route ("/Chat").get ((req , res) => viewHtml (res , "Chat/Main"));
+app.route ("/test").get ((req , res) =>
+{
+    getInfo (req , res , {} , (ok , scode , result) =>
+    {
+        console.log (ok);
+        console.log (scode);
+        console.log (result);
+        res.end ();
+    });
+});
 
 app.route ("/api").post (api);
 
